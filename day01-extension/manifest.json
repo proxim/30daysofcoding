@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Button Tracker",
+  "description": "A very helpful extension that keeps track of how many buttons you press.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/button-128px.png"
+  },
+  "icons": {
+    "16": "images/button-16px.png",
+    "32": "images/button-32px.png",
+    "48": "images/button-48px.png",
+    "128": "images/button-128px.png"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
